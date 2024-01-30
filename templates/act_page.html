@@ -1,0 +1,14 @@
+{% extends 'inner-page.html' %}
+
+{% block title %}
+    {{ act.name }}
+{% endblock %}
+
+{% block main %}
+<div class="container d-flex align-items-center justify-content-center" style="margin-top: 0px; margin-bottom: 50px; min-height: 100vh;">
+	<div>
+		<h1>{{ act.name }}</h1>
+		<p style="max-width: 1050px;">{{ act.desc }}</p>
+	</div>
+</div>
+{% endblock %}

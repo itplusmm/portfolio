@@ -1,0 +1,35 @@
+{% extends 'admin.html' %}
+
+{% block title %}
+    Create Blog
+{% endblock %}
+
+{% block main %}
+<div class="table-bg">
+    <h1 class="heading">Create Blog</h1>
+    <form action="#" method="post" class="form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Enter Name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Category</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="category">
+            {% for row in rows %}
+            <option>{{ row.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
+        </div>
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label for="exampleFormControlFile1">Cover Image</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+        </div>
+        <div class="form-group" style="margin-bottom: 20px;">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+  </div>
+{% endblock %}

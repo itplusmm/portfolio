@@ -1,0 +1,35 @@
+{% extends 'admin.html' %}
+
+{% block title %}
+    View Blog
+{% endblock %}
+
+{% block main %}
+<div class="table-bg">
+  <h1 class="heading">View Blog</h1>
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Desc</th>
+          <th scope="col">Category</th>
+          <th scope="col">Created At</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in rows %}
+        <tr>
+          <th scope="row">{{ row.id }}</th>
+          <td>{{ row.name }}</td>
+          <td class="clamp-lines">{{ row.desc }}</td>
+          <td>{{ row.category }}</td>
+          <td>{{ row.created_at }}</td>
+          <td><a href="{{ url_for('delete_blog', blog_id=row.id) }}" class="btn btn-primary" style="padding: 8px;">Delete</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

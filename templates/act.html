@@ -1,0 +1,39 @@
+{% extends 'inner-page.html' %}
+
+{% block title %}
+    Activity
+{% endblock %}
+
+{% block main %}
+<div class="blog-container">
+  <div class="section-title">
+    <h2>Activity</h2>
+    <p style="width: 1000px;">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+  </div>
+  {% for act in acts %}
+    <div class="card" data-aos="fade-up">
+      <div class="card__header">
+        <img src="../static/upload/{{ act.image }}" alt="card__image" class="card__image" width="600">
+      </div>
+      <div class="card__body">
+        <span class="tag tag-blue">Activity</span>
+        <h4>{{ row.name }}</h4>
+        <p class="clamp-lines">{{ act.desc }}<form action="/act/{{ act.id }}" method="post">
+          <button type="submit" class="btn btn-primary btn-sm btn-course">Read More.</button>
+      </form></p>
+      </div>
+      <div class="card__footer">
+        <div class="user">
+          <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
+          <div class="user__info">
+            <h5>Jane Doe</h5>
+            <small>2h ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+  <!-- partial -->
+{% endblock %}
